@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" id="icon" type="image/x-icon" href="/images/logo.ico">
+    <script src="https://kit.fontawesome.com/5d4f05ccf9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo"><img src="images/logo.png"></a>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="row">
+                <div class="head-col-1">
+                    <h1>Hi, I'm <span>Patrick Harvey</span> Rendon</h1>
+                    <p>Not a UI/UX Designer</p>
+                    <p>Barely knows Programming</p>
+                </div>
+                <div class="head-col-2">
+                    <div class="img3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ====about==== -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I am a 27-year-old Filipino currently pursuing a BS in Information Technology, with a solid foundation in tech and a passion for innovation.</p>
+                    <p> My diverse work experience across various fields has equipped me with a versatile skill set and the ability to adapt quickly to new challenges. I am committed to leveraging my knowledge and experience to contribute effectively in the IT industry while continuously learning and growing in my career.</p>
+                </div>
+                <div class="about-col-2">
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('references')">References</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>AutoCAD and Basic Image/Video Editing</span><br>Proficient in creating detailed 2D and 3D designs, technical drawings, and capable of editing visual content using various software tools.</li>
+                            <li><span>Problem-Solving and Troubleshooting</span><br>Strong ability to analyze issues, identify root causes, and implement effective solutions across technical and operational challenges.</li>
+                            <li><span>Customer Service</span><br>Experienced in providing excellent service and resolving customer issues</li>
+                            <li><span>Office Work</span><br>Competent in handling administrative tasks, including data entry, document management, and scheduling.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Provincial Youth Development Office</span><br>Administrative Aid VI</li>
+                            <li><span>Alorica</span><br>Tech Support Representative</li>
+                            <li><span>Teleperfomance</span><br>Back Office Customer Service Representative</li>
+                        </ul> 
+                    </div>
+                    <div class="tab-contents" id="references">
+                        <ul>
+                            <li><span>Engr. Renier Renz Brillantes</span><br>Licensed Mining Engineer - Eramen Minerals, Inc.</li>
+                            <li><span>Engr. Frent Novee Albacite</span><br>Licensed Mining Engineer - EPSA</li>
+                            <li><span>Ma. Hershey Uy</span><br>Creative Artist - Pointbee Multimedia Inc.</li>
+                        </ul> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ====contact==== -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-at"></i>phbrendon@antiquespride.edu.ph</p>
+                    <p><i class="fa-solid fa-phone"></i>09557612545</p>
+                    <div class="social-icons">
+                        <a href="https://www.m.me/rendon.ph"><i class="fa-brands fa-facebook-messenger"></i></a>
+                        <a href="https://www.instagram.com/clayweg_?igsh=ODdtYzI2MzZqYjFz"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.discordapp.com/users/419161121837023243"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+                    <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+                    <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+                    <script>
+                        const scriptURL = '<https://script.google.com/macros/s/AKfycbw8HbK_GG3evamv58Khv7x4HB3_Lm2J4pS5ShZhZ5rKwgFsAPJQKuypk6GImEuyXsU/exec>'
+                        const form = document.forms['submit-to-google-sheet']
+                      
+                        form.addEventListener('submit', e => {
+                          e.preventDefault()
+                          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                            .then(response => console.log('Success!', response))
+                            .catch(error => console.error('Error!', error.message))
+                        })
+                      </script>
+                </div>
+            </div>
+        </div>
+        <footer class="copyright">
+            <p>Copyright © Rendon 2024</p>
+        </footer>
+    </div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for(tablink of tablinks) {
+            tablink.classList.remove("active-link")
+        }
+        for(tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link");
+
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+</body>
+</html>
