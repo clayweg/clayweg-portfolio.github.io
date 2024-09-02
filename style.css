@@ -286,3 +286,9 @@ form .btn2 {
     margin-top: 100px;
     bottom: 0;
 }
+
+#msg {
+    color:#445D48;
+    margin-top: -40px;
+    display: block;
+}
