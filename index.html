@@ -93,20 +93,6 @@
                         <textarea name="message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
-                    <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
-                    <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
-                    <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
-                    <script>
-                        const scriptURL = '<https://script.google.com/macros/s/AKfycbw8HbK_GG3evamv58Khv7x4HB3_Lm2J4pS5ShZhZ5rKwgFsAPJQKuypk6GImEuyXsU/exec>'
-                        const form = document.forms['submit-to-google-sheet']
-                      
-                        form.addEventListener('submit', e => {
-                          e.preventDefault()
-                          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                            .then(response => console.log('Success!', response))
-                            .catch(error => console.error('Error!', error.message))
-                        })
-                      </script>
                 </div>
             </div>
         </div>
@@ -129,6 +115,17 @@
 
         document.getElementById(tabname).classList.add("active-tab");
     }
+</script>
+<script>
+  const scriptURL = '<https://script.google.com/macros/s/AKfycbw_X42JQ6jgmtaHJ4JR5Hua5YgVsOHCdgKsh3BKZRO7QszBeEbJY7KosXfLih1zTSQ5/exec>'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
 </script>
 </body>
 </html>
