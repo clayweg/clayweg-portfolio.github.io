@@ -17,16 +17,16 @@ body {
     font-weight: 600;
     color: #fff;
 }
+
 #header {
     width: 100%;
     height: 100vh;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.4)0%, rgba(255, 255, 255, 0.2)100%), url(images/img3.png);
     background-size: cover;
     background-attachment: fixed;
+    span {
+        color: #ff00ae;
 }
-
-#header span {
-    color: #ff00ae;
 }
 
 .container {
@@ -288,7 +288,7 @@ form .btn2 {
 }
 
 #msg {
-    color:#445D48;
+    color: #445D48;
     margin-top: -40px;
     display: block;
 }
