@@ -287,7 +287,7 @@ form .btn2 {
     bottom: 0;
 }
 
-#msg {
+html #msg {
     color:#445D48;
     margin-top: -40px;
     display: block;
