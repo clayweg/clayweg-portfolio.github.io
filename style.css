@@ -111,7 +111,7 @@ nav ul li a:hover::after {
     padding: 80px;
     background-image: linear-gradient(to bottom, #f4978e 0%, rgba(0, 0, 0, 0.5)70%, rgba(0, 0, 0, 0.8)100%), url("images/img2.jpg");
     background-size: cover;
-    color: #ababab;
+    color: #dddddd;
 }
 
 .about-col-1 {
