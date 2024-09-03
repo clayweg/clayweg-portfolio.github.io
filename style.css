@@ -283,7 +283,7 @@ form .btn2 {
     padding: 10px 0;
     background: #262626;
     font-weight: 300;
-    margin-top: 100px;
+    position: absolute;
     bottom: 0;
 }
 
